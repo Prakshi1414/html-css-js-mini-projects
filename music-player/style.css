@@ -1,0 +1,218 @@
+/* General Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  background-color: whitesmoke;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  max-width: 100%;
+}
+
+/* Player Container */
+.player-container {
+  width: 100%;
+  max-width: 95%;
+  height: 1010px;
+  background-color: black;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.player-container h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 38px;
+  font-weight: bold;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 15px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Now Playing Section */
+.now-playing {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.now-playing img {
+  width: 100%;
+  max-width: 95%;
+  height: 500px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.track-info h2 {
+  font-size: 30px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.track-info p {
+  font-size: 18px;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+/* Progress Bar */
+.progress-container {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+#progress {
+  flex: 1;
+  width: 30%;
+  max-width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.controls button {
+  font-size: 30px;
+  margin: 0 10px;
+  padding: 10px 15px;
+  background-color: #2a2a2a;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.controls button:hover {
+  background-color: white;
+  transform: scale(1.1);
+}
+
+/* Volume Control */
+.volume-container {
+  margin-top: 3px;
+  display: flex;
+  width: 50%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.volume-container button {
+  font-size: 20px;
+  padding: 5px 10px;
+  background-color: #2a2a2a;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.volume-container button:hover {
+  background-color: white;
+}
+
+#volume {
+  width: 30%;
+  cursor: pointer;
+}
+
+/* Playlist */
+#playlist {
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  padding: 10px 0;
+}
+
+#playlist li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#playlist li:hover {
+  background-color: #333;
+  border-radius: 5px;
+}
+
+#playlist li.active {
+  background-color: #9d9b9b;
+  border-radius: 5px;
+}
+
+#playlist li button {
+  font-size: 16px;
+  background-color: #2a2a2a;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#playlist li button:hover {
+  background-color: #ff6b81;
+}
+
+/* Scrollbar Styling for Playlist */
+#playlist::-webkit-scrollbar {
+  width: 6px;
+}
+
+#playlist::-webkit-scrollbar-thumb {
+  background: #ff6b81;
+  border-radius: 3px;
+}
+
+#playlist::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .controls button {
+    font-size: 18px;
+    margin: 0 5px;
+  }
+
+  .now-playing h1 {
+    font-size: 20px;
+  }
+
+  .track-info h2 {
+    font-size: 16px;
+  }
+
+  .track-info p {
+    font-size: 12px;
+  }
+}

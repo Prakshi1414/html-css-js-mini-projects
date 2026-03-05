@@ -1,0 +1,15 @@
+Task 1: Dynamic List
+
+Goal: User se items leke ek list me show karo, aur remove karne ka option bhi do.
+
+Steps:
+
+Ek input box aur button banao (Add Item).
+
+User input me jo value type kare, usse array me push karo.
+
+Array ka content ek <ul> me show karo.
+
+Har item ke saath ek Delete button bhi add karo, jo click karne par item array se remove ho aur list update ho.
+
+Extra: List me items ko alphabetical order me show karo.

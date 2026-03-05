@@ -1,0 +1,10 @@
+if (text !== "") {
+    words = text.split(/\s+/).length;
+  }
+  const characters = text.length;
+  const charactersWithoutSpaces = text.replace(/\s/g, "").length;
+
+   counterdisplay.innerHTML = `Total Words: ${words} <br>Total Characters: ${characters}<br> Total without space characters: ${charactersWithoutSpaces}`;
+
+   inputfield.addEventListener("input", updateCounts);
+     e.preventDefault();

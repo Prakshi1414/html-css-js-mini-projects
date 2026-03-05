@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Design</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="cardContainer">
+      <div class="card">
+        <div class="card-image">
+          <span class="tag">NEWS</span>
+          <img src="images/cardimg.png" />
+        </div>
+        <div class="card-content">
+          <p class="date">26.11.2016 / <span>By Felix Lee</span></p>
+          <h2 class="title">Steps In Installing Rack Mount Lcd Monitors</h2>
+          <p class="summary">
+            All the rumors have finally died down and many skeptics have
+            tightened their lips on what they think…
+          </p>
+          <a href="#" class="read-more">Read more →</a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      let link = fetch(
+        "https://api.spaceflightnewsapi.net/v4/articles/?format=json&limit=9&offset=20"
+      );
+      link
+        .then((Response) => {
+          console.log(Response.status);
+          console.log(Response.ok);
+          return Response.json();
+        })
+        .then((value) => {
+          console.log(value.results.length);
+          value.results.forEach((element) => {
+            console.log(element.title);
+            console.log(element.published_at);
+            console.log(element.summary);
+
+            let container = document.querySelector(".cardContainer");
+            let card = document.createElement("div");
+            card.classList.add("card");
+            card.innerHTML = `
+          <div class="card-image">
+            <span class="tag">NEWS</span>
+            <img src="${element.image_url}" alt="${element.title}" />
+          </div>
+          <div class="card-content">
+            <p class="date">${new Date(element.published_at).toLocaleDateString()} / <span>BY FELIX LEE </span></p>
+            <h2 class="title">${element.title}</h2>
+            <p class="summary">
+              ${element.summary.slice(0, 120)}.…
+            </p>
+            <a href="#" class="read-more">Read more →</a>
+          </div>`;
+           container.appendChild(card);
+          });
+        });
+
+    </script>
+  </body>
+</html>

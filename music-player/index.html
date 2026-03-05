@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="player-container">
+      <!-- Now Playing -->
+      <h1>MUSIC PLAYER</h1>
+      <div class="now-playing">
+        <img src="/assets/covor1.jpg" alt="Cover" id="cover" />
+        <div class="track-info">
+          <h2 id="track-title">Track Title</h2>
+          <p id="track-artist">Artist Name</p>
+        </div>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="progress-container">
+        <span id="current-time">0:00</span>
+        <input type="range" id="progress" min="0" max="100" value="0" />
+        <span id="duration">0:00</span>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <button id="prev">⏮️</button>
+        <button id="play">▶️</button>
+        <button id="next">⏭️</button>
+      </div>
+
+      <!-- Volume Control -->
+      <div class="volume-container">
+        <button id="mute">🔊</button>
+        <input type="range" id="volume" min="0" max="1" step="0.01" value="1" />
+      </div>
+
+      <!-- Playlist -->
+      <ul id="playlist"></ul>
+
+      <!-- Audio element -->
+      <audio id="audio"></audio>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

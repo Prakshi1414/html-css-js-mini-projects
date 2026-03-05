@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <form id="loginForm">
+      <h1>LOGIN</h1>
+
+      <label for="email">Email:</label><br />
+      <input type="text" id="email" name="email" required /><br /><br />
+
+      <label for="password">Password:</label><br />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+      /><br /><br />
+
+      <input type="submit" value="Login" />
+      <p class="signup-text">
+        You don't have any account? <a href="reg.html">Create one</a>
+      </p>
+    </form>
+
+    <!-- Firebase App (required) -->
+    <script type="module">
+      // ✅ Import required Firebase modules
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+      import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+
+      // ✅ Your Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAj4bqDeF2pZm0Kj3ZZST5hGaQLVQs8JMk",
+        authDomain: "logininfo-3403c.firebaseapp.com",
+        projectId: "logininfo-3403c",
+        storageBucket: "logininfo-3403c.firebasestorage.app",
+        messagingSenderId: "898753966973",
+        appId: "1:898753966973:web:c5ceb5296070feac3e5214",
+        measurementId: "G-4PFM3RXY3M",
+      };
+
+      // ✅ Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      // ✅ Handle Login
+      const loginForm = document.getElementById("loginForm");
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            const user = userCredential.user;
+            alert("Login successful ✅");
+            console.log("User:", user.email);
+            // Optional redirect
+            // window.location.href = "home.html";
+          })
+          .catch((error) => {
+            alert("Error: " + error.message);
+          });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student class system</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <!--home page-->
+  <div class="student-section">
+    <h2 id="title">Student Class</h2>
+    <div class="student-constructer">
+      <button onclick="showAddForm()" id="addbutton">ADD CLASS</button>
+      <button onclick="showClassList()" id="viewbutton">VIEW CLASS</button>
+      <button onclick="showSearch()" id="searchbutton">SEARCH CLASS</button>
+    </div>
+
+    <!-- Add Class Form -->
+    <div id="addForm" class="form-section hidden">
+      <input type="text" id="className" placeholder="Class Name">
+      <input type="text" id="teacherName" placeholder="Teacher Name">
+      <input type="text" id="schedule" placeholder="Time / Schedule">
+      <input type="text" id="batch" placeholder="Batch / Section">
+      <button id="savebutton"  onclick="saveClass()">SAVE</button>
+    </div>
+
+    <!-- Class List Section -->
+    <div id="classList" class="list-section hidden">
+    </div>
+
+    <!-- Search Section -->
+    <div id="searchSection" class="search-section hidden">
+      <input type="text" id="searchInput" placeholder="Search by Teacher Name">
+      <button id="searchbtn">SEARCH</button>
+        <div id="searchResults"></div>
+    </div>
+  </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

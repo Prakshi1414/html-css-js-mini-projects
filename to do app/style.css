@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(96, 75, 130);
+  background-image: url(images/bg.png);
+  background-size: 1900px;
+  color: white;
+  border-color: rgb(27, 19, 27) ;
+}
+
+.to-do-app {
+  max-width: 500px;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120px;
+}
+
+.box-container{
+    width: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid rgb(20, 11, 20);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.box-container .details{
+    width: 100%;
+
+}
+
+.details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.details h1{
+   font-size: 34px;
+}
+form{
+   margin-top: 60px;
+   width: 100%;
+   display: flex;
+   gap: 10px;
+   align-items: center;
+}
+
+.task-input-container{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: #13132c;
+    border: 1px solid purple;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+.task-input-container input{
+    flex: 1;
+    padding: 16px;
+    color: white;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.icons{
+    display: flex;
+    gap: 10px;
+}
+
+.icons img{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: purple;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    outline: none;
+}
+#headline{
+    font-size: 26px;
+    margin-top: 30px;
+}
+#task-list {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e1010;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.task-text {
+  flex: 1;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.task-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.task-icons img {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.task-icons img:hover {
+  transform: scale(1.8);
+}
+
+.completed .task-text {
+  text-decoration: line-through;
+  color: #aaa;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Blog page-->
+    <section class="Blog-page">
+        <h1> Welcome ! To Blog Application</h1>
+        <div class="Blog-container">
+            <button onclick="showAdd()" id="addbtn">ADD BLOG</button>
+            <button onclick="showEdit()" id="editbtn">EDIT BLOG</button>
+            <button onclick="showView()" id="viewbtn">VIEW BLOG</button>
+        </div>
+            <!-- create Blog Form -->
+       <form id="addblogs" class="blog-form hidden">
+        <label >Blog title</label>
+        <input type="text" id="title" placeholder="Enter Your Blog Title">
+
+        <label >Blog content</label>
+        <input type="text"  id="content" placeholder="Enter Blog Content">
+
+        <label >Blog Author Name</label>
+        <input type="text" id="author" placeholder="Enter Blog Author Name">
+
+        <button type="button" id="savebutton" onclick="saveBlog(event)" > SAVE BLOG</button>
+       </form>
+
+           <!-- edit Blog Form -->
+       <div id="editblogs" class="edit-blogs hidden">
+       </div>
+        <!-- view Section -->
+        <div id="viewblogs" class="view-blogs hidden">
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice Roller</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        background-color: lightblue;
+        font-family: Arial, sans-serif;
+      }
+        .dice-section {
+            width: 700px;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        img {
+            margin-top: 20px;
+            width: 400px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="dice-section">
+      <h1>Dice Roller</h1>
+
+      <!-- Starting image -->
+      <img id="diceImage" src="dic1.jpg" width="200" />
+
+      <br /><br />
+      <button onclick="rollDice()">Roll Dice</button>
+    </div>
+
+    <script>
+      function rollDice() {
+        let number = Math.floor(Math.random() * 6) + 1;
+        document.getElementById("diceImage").src = `dic${number}.jpg`;
+      }
+    </script>
+  </body>
+</html>
